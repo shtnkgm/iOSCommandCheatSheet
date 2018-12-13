@@ -122,7 +122,7 @@ rm -rf ~/Library/Caches/SwiftLint
 pod cache clean --all
 rm -rf ~/Library/Caches/org.carthage.CarthageKit 
 rm -rf ~/Library/Caches/carthage
-rm ~/.fastlane/spaceship/[your_email]/cookie
+rm ~/.fastlane/spaceship/**/cookie
 ```
 
 
