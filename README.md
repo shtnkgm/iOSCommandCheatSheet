@@ -81,4 +81,11 @@ ffmpeg -i sample_01.mov -vf scale=400:-1 -r 20 sample_01.gif
 swiftc -print-ast
 ```
 
+## SwiftLint
+
+```bash
+# Copy All Opt-In Rules
+swiftlint rules | awk -F "|" '$3 ~ "yes" { print $2 }' | tr -d ' ' | sed 's/^/  - /' | pbcopy
+```
+
 
