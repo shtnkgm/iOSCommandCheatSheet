@@ -1,4 +1,4 @@
-# CheatSheet
+# iOS CheatSheet
 CheetSheet for iOS Developer
 
 ## Git
