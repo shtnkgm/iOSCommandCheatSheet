@@ -4,16 +4,32 @@
 ## Git
 
 ```bash
+# Create .gitignore
+gibo dump Swift Xcode >> .gitignore
+
 # Download .gitignore for iOS (https://gist.github.com/shtnkgm/dfe0a0478a15de11ce93ca6f39223cd5)
 wget https://bit.ly/shtnkgmgi2 -O .gitignore
 
-# Quick Fix Push
+# Quick Push .gitignore
+git add .gitignore;git commit -m "add .gitignore"
+
+# Quick Push Igonored Files
+git rm -r --cached .;git add .;git commit -m "rm ignore files"
+
+# Quick Push Fix
 git add .;git commit -m "fix";git push
 ```
 
 ## Dependency Manager
 
 ```bash
+# Clear Pods
+rm -rf Pods; rm Podfile; rm Podfile.lock 
+
+ # Init Pods
+pod init
+atom Podfile
+
 pod install
 pod update
 
@@ -27,14 +43,18 @@ ls Carthage/Build/iOS | grep -E .+framework$ | sed 's/.*/$(SRCROOT)\/Carthage\/B
 ## Fastlane
 
 ```bash
+# Init fastlane
+fastlane init
+fastlane add_plugin versioning
+
 # Download Metadata
-fastlane deliver download_metadata　
+fastlane deliver download_metadata　 --force
 
 # Upload Metadata
 fastlane deliver --force --skip_screenshots --skip_binary_upload --skip_app_version_update
 
 # Download Screenshot
-fastlane deliver download_screenshots
+fastlane deliver download_screenshots --force
 
 # Create Screenshot
 fastlane frameit(path: './fastlane/screenshots/', white: false)
