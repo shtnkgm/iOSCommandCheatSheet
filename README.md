@@ -75,4 +75,10 @@ fastlane deliver --force --skip_screenshots --skip_metadata --skip_app_version_u
 ffmpeg -i sample_01.mov -vf scale=400:-1 -r 20 sample_01.gif
 ```
 
+## Swift Compiler
+```bash
+# Print AST
+swiftc -print-ast
+```
+
 
