@@ -33,11 +33,26 @@ atom Podfile
 pod install
 pod update
 
+# Create PodSpec
+pod spec create pod_name
+
+# Lint PodSpec
+pod lib lint
+
+# Create Trunk Account 
+pod trunk register mail_address 'your_name'
+
+# Publish Pods
+pod trunk push pod_name.podspec
+
 carthage bootstrap --platform iOS --cache-builds
 carthage update --platform iOS --cache-builds
 
 # Create XCFileList
-ls Carthage/Build/iOS | grep -E .+framework$ | sed 's/.*/$(SRCROOT)\/Carthage\/Build\/iOS\/&/' > CarthageInput.xcfilelist 
+ls Carthage/Build/iOS | grep -E .+framework$ | sed 's/.*/$(SRCROOT)\/Carthage\/Build\/iOS\/&/' > CarthageInput.xcfilelist
+
+# Build for Check Library
+carthage build --no-skip-current 
 ```
 
 ## Fastlane
