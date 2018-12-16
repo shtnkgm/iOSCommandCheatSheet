@@ -130,10 +130,16 @@ swiftc -dump-ast file
 ## SwiftLint
 
 ```bash
+# Install
 brew install swiftlint
 
+# Lint
 swiftlint
+
+# AutoCorrect
 swiftlint autocorrect
+
+# Print Docs
 swiftlint generate-docs
 
 # Copy All Opt-In Rules
