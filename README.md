@@ -1,25 +1,6 @@
 # iOS CheatSheet
 CheetSheet for iOS Developer
 
-## Git
-
-```bash
-# Create .gitignore
-gibo dump Swift Xcode >> .gitignore
-
-# Download .gitignore for iOS (https://gist.github.com/shtnkgm/dfe0a0478a15de11ce93ca6f39223cd5)
-wget https://bit.ly/shtnkgmgi2 -O .gitignore
-
-# Quick Push .gitignore
-git add .gitignore;git commit -m "add .gitignore"
-
-# Quick Push Igonored Files
-git rm -r --cached .;git add .;git commit -m "rm ignore files"
-
-# Quick Push Fix
-git add .;git commit -m "fix";git push
-```
-
 ## Dependency Manager
 
 ```bash
@@ -131,4 +112,22 @@ rm -rf ~/Library/Caches/carthage
 rm ~/.fastlane/spaceship/**/cookie
 ```
 
+## Git
+
+```bash
+# Create .gitignore
+gibo dump Swift Xcode >> .gitignore
+
+# Download .gitignore for iOS (https://gist.github.com/shtnkgm/dfe0a0478a15de11ce93ca6f39223cd5)
+wget https://bit.ly/shtnkgmgi2 -O .gitignore
+
+# Quick Push .gitignore
+git add .gitignore;git commit -m "add .gitignore"
+
+# Quick Push Igonored Files
+git rm -r --cached .;git add .;git commit -m "rm ignore files"
+
+# Quick Push Fix
+git add .;git commit -m "fix";git push
+```
 
