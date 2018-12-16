@@ -1,6 +1,13 @@
 # iOS CheatSheet
 CheetSheet for iOS Developer
 
+## KeyChain
+
+```bash
+# print certificates
+security find-identity -p codesigning -v
+```
+
 ## CocoaPods
 
 ```bash
