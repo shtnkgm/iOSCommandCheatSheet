@@ -14,6 +14,9 @@ ls ~/Library/MobileDevice/Provisioning\ Profiles/
 ## CocoaPods
 
 ```bash
+# install
+sudo gem install cocoapods
+
 # Clear Pods
 rm -rf Pods; rm Podfile; rm Podfile.lock 
 
@@ -43,6 +46,9 @@ pod cache clean --all
 ## Carthage
 
 ```bash
+# install
+brew install Carthage
+
 carthage bootstrap --platform iOS --cache-builds
 carthage update --platform iOS --cache-builds
 
@@ -60,6 +66,9 @@ rm -rf ~/Library/Caches/carthage
 ## Fastlane
 
 ```bash
+# install
+brew cask install fastlane
+
 # Init fastlane
 fastlane init
 fastlane add_plugin versioning
@@ -105,6 +114,8 @@ swiftc -dump-ast file
 ## SwiftLint
 
 ```bash
+brew install swiftlint
+
 swiftlint
 swiftlint autocorrect
 swiftlint generate-docs
@@ -157,6 +168,7 @@ rm -rf $(brew --cache)
 
 ```bash
 # Create .gitignore
+brew install gibo
 gibo dump Swift Xcode >> .gitignore
 
 # Download .gitignore for iOS (https://gist.github.com/shtnkgm/dfe0a0478a15de11ce93ca6f39223cd5)
