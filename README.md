@@ -115,7 +115,7 @@ rm -rf ~/Library/Caches/SwiftLint
 
 ## Xcode
 
-```
+```bash
 # check number of cores, and set number to build
 system_profiler SPHardwareDataType
 defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks [number_of_core]
