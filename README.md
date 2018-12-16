@@ -158,6 +158,9 @@ rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang.$(whoami)/ModuleCache"
 ## HomeBrew
 
 ```bash
+# install
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Delete Caches
 rm -rf ~/Library/Caches/Homebrew
 brew cleanup -s
