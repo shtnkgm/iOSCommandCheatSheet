@@ -99,6 +99,10 @@ swiftc -print-ast
 ## SwiftLint
 
 ```bash
+swiftlint
+swiftlint autocorrect
+swiftlint generate-docs
+
 # Copy All Opt-In Rules
 swiftlint rules | awk -F "|" '$3 ~ "yes" { print $2 }' | tr -d ' ' | sed 's/^/  - /' | pbcopy
 ```
