@@ -33,9 +33,11 @@ rm -rf Pods; rm Podfile; rm Podfile.lock
 
 # Init Pods
 pod init
-atom Podfile
 
+# Install Libraries
 pod install
+
+# Update Libraries
 pod update
 
 # Create PodSpec
@@ -60,7 +62,10 @@ pod cache clean --all
 # install
 brew install Carthage
 
+# Install Libraries
 carthage bootstrap --platform iOS --cache-builds
+
+# Update Libraries
 carthage update --platform iOS --cache-builds
 
 # Create XCFileList
