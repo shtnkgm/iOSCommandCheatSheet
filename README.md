@@ -1,7 +1,7 @@
 # iOS CheatSheet
-iOSデベロッパー向けのチートシートです。
+iOSデベロッパー向けのコマンドチートシートです。
 
-CheetSheet for iOS Developer
+Command CheetSheet for iOS Developer
 
  - Certificates / Provisioning Profiles
  - CocoaPods
