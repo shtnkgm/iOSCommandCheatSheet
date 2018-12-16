@@ -155,15 +155,14 @@ xcodebuild -list
 xcodebuild -showsdks
 
 ## Clean
-rm -rf ~/Library/Caches/com.apple.dt.Xcode/
-xcodebuild clean
 xcodebuild -alltargets clean
 rm -rf ~/Library/Developer/Xcode/DerivedData/
-xcrun --kill-cache
-xcrun simctl erase all
+rm -rf ~/Library/Caches/com.apple.dt.Xcode/
 rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport/*/Symbols/System/Library/Caches
 rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache"
 rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang.$(whoami)/ModuleCache"
+xcrun --kill-cache
+xcrun simctl erase all
 ```
 
 ## HomeBrew
