@@ -11,8 +11,8 @@ Command CheetSheet for iOS Developer
  - Swift Compiler
  - SwiftLint
  - Xcode
- - HomeBrew
- - Git
+ - Homebrew
+ - .gitignore
 
 ## Certificates / Provisioning Profiles
 
@@ -181,7 +181,7 @@ xcrun --kill-cache
 xcrun simctl erase all
 ```
 
-## HomeBrew
+## Homebrew
 
 ```bash
 # インストール / Install
@@ -193,7 +193,7 @@ brew cleanup -s
 rm -rf $(brew --cache)
 ```
 
-## Git
+## .gitignore
 
 ```bash
 # .gitignoreの生成 / Create .gitignore
@@ -205,8 +205,5 @@ git add .gitignore;git commit -m "add .gitignore"
 
 # git管理されないファイルの削除プッシュ /  Quick Push Igonored Files
 git rm -r --cached .;git add .;git commit -m "rm ignore files"
-
-# fixをクイックプッシュ / Quick Push Fix
-git add .;git commit -m "fix";git push
 ```
 
