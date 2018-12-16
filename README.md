@@ -1,4 +1,4 @@
-# iOS CheatSheet
+# iOS Command CheatSheet
 iOSデベロッパー向けのコマンドチートシートです。
 
 Command CheetSheet for iOS Developer
