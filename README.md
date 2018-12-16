@@ -1,7 +1,7 @@
 # iOS CheatSheet
 CheetSheet for iOS Developer
 
-## Dependency Manager
+## CocoaPods
 
 ```bash
 # Clear Pods
@@ -25,7 +25,11 @@ pod trunk register mail_address 'your_name'
 
 # Publish Pods
 pod trunk push pod_name.podspec
+```
 
+## Carthage
+
+```bash
 carthage bootstrap --platform iOS --cache-builds
 carthage update --platform iOS --cache-builds
 
