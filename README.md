@@ -1,11 +1,14 @@
 # iOS CheatSheet
 CheetSheet for iOS Developer
 
-## KeyChain
+## Certificates / Provisioning Profiles
 
 ```bash
-# print certificates
+# print certificates in keychain
 security find-identity -p codesigning -v
+
+# print provisioning profiles
+ls ~/Library/MobileDevice/Provisioning\ Profiles/
 ```
 
 ## CocoaPods
