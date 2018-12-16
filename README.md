@@ -26,7 +26,7 @@ git add .;git commit -m "fix";git push
 # Clear Pods
 rm -rf Pods; rm Podfile; rm Podfile.lock 
 
- # Init Pods
+# Init Pods
 pod init
 atom Podfile
 
