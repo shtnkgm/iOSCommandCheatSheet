@@ -1,4 +1,5 @@
 # iOS CheatSheet
+iOSデベロッパー向けのチートシートです。
 CheetSheet for iOS Developer
 
  - Certificates / Provisioning Profiles
