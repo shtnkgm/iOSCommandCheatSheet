@@ -185,9 +185,6 @@ rm -rf $(brew --cache)
 brew install gibo
 gibo dump Swift Xcode >> .gitignore
 
-# Download .gitignore for iOS (https://gist.github.com/shtnkgm/dfe0a0478a15de11ce93ca6f39223cd5)
-wget https://bit.ly/shtnkgmgi2 -O .gitignore
-
 # Quick Push .gitignore
 git add .gitignore;git commit -m "add .gitignore"
 
