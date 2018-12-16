@@ -1,6 +1,17 @@
 # iOS CheatSheet
 CheetSheet for iOS Developer
 
+ - Certificates / Provisioning Profiles
+ - CocoaPods
+ - Carthage
+ - Fastlane
+ - Create Gif
+ - Swift Compiler
+ - SwiftLint
+ - Xcode
+ - HomeBrew
+ - Git
+
 ## Certificates / Provisioning Profiles
 
 ```bash
