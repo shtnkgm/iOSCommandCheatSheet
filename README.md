@@ -92,8 +92,10 @@ ffmpeg -i sample_01.mov -vf scale=400:-1 -r 20 sample_01.gif
 
 ## Swift Compiler
 ```bash
-# Print AST
-swiftc -print-ast
+# Parse and type-check input file(s) and pretty print AST(s)
+swiftc -print-ast file
+# Parse and type-check input file(s) and dump AST(s)
+swiftc -dump-ast file
 ```
 
 ## SwiftLint
