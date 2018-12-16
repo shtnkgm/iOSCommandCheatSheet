@@ -7,7 +7,7 @@ CheetSheet for iOS Developer
  - CocoaPods
  - Carthage
  - Fastlane
- - Create Gif
+ - ffmpeg
  - Swift Compiler
  - SwiftLint
  - Xcode
@@ -17,66 +17,66 @@ CheetSheet for iOS Developer
 ## Certificates / Provisioning Profiles
 
 ```bash
-# print certificates in keychain
+# キーチェーンの証明書一覧を表示 / Print certificates in keychain
 security find-identity -p codesigning -v
 
-# print provisioning profiles
+# ローカルに保存されたプロビジョニングプロファイル一覧を表示 / Print provisioning profiles
 ls ~/Library/MobileDevice/Provisioning\ Profiles/
 ```
 
 ## CocoaPods
 
 ```bash
-# install
+# インストール / Install
 sudo gem install cocoapods
 
-# Clear Pods
+# Podsの削除 / Delete Pods
 rm -rf Pods; rm Podfile; rm Podfile.lock 
 
-# Init Pods
+# Podfileの初期化 / Init Podfile
 pod init
 
-# Install Libraries
+# ライブラリのインストール / Install libraries
 pod install
 
-# Update Libraries
+# ライブラリのアップデート / Update Libraries
 pod update
 
-# Create PodSpec
+# Podspecの初期化 / Create PodSpec
 pod spec create pod_name
 
-# Lint PodSpec
+# Podspecのチェック / Lint PodSpec
 pod lib lint
 
-# Create Trunk Account 
+# Trunkアカウントの登録 / Create Trunk Account 
 pod trunk register mail_address 'your_name'
 
-# Publish Pods
+# Podsライブラリの公開 / Publish Pods
 pod trunk push pod_name.podspec
 
-# Delete Caches
+# キャッシュの削除 / Delete Caches
 pod cache clean --all
 ```
 
 ## Carthage
 
 ```bash
-# install
+# インストール / Install
 brew install Carthage
 
-# Install Libraries
+# ライブラリのインストール / Install Libraries
 carthage bootstrap --platform iOS --cache-builds
 
-# Update Libraries
+# ライブラリのアップデート / Update Libraries
 carthage update --platform iOS --cache-builds
 
-# Create XCFileList
+# XCFileListの生成 / Create XCFileList
 ls Carthage/Build/iOS | grep -E .+framework$ | sed 's/.*/$(SRCROOT)\/Carthage\/Build\/iOS\/&/' > CarthageInput.xcfilelist
 
-# Build for Check Library
+# ビルド / Build
 carthage build --no-skip-current 
 
-# Delete Caches
+# キャッシュの削除 / Delete Caches
 rm -rf ~/Library/Caches/org.carthage.CarthageKit 
 rm -rf ~/Library/Caches/carthage
 ```
@@ -84,90 +84,93 @@ rm -rf ~/Library/Caches/carthage
 ## Fastlane
 
 ```bash
-# install
+# インストール / Install
 brew cask install fastlane
 
-# Init fastlane
+# 初期設定 / Init fastlane
 fastlane init
-fastlane add_plugin versioning
 
-# Download Metadata
+# メタデータのダウンロード / Download Metadata
 fastlane deliver download_metadata　 --force
 
-# Upload Metadata
+# メタデータのアップロード / Upload Metadata
 fastlane deliver --force --skip_screenshots --skip_binary_upload --skip_app_version_update
 
-# Download Screenshot
+# スクリーンショットのダウンロード / Download Screenshot
 fastlane deliver download_screenshots --force
 
-# Create Screenshot
+# スクリーンショットの生成（frameit） / Create Screenshot
 fastlane frameit(path: './fastlane/screenshots/', white: false)
 
-# Upload Screenshot
+# スクリーンショットのアップロード / Upload Screenshot
 fastlane deliver --force --skip_binary_upload --skip_metadata --skip_app_version_update --overwrite_screenshots
 
-# Upload Binary
+# バイナリのアップロード / Upload Binary
 fastlane deliver --force --skip_screenshots --skip_metadata --skip_app_version_update
 
-# Submit for Review
+# 自動リリースで申請 / Submit for Review
 fastlane deliver --force --skip_screenshots --skip_metadata --skip_app_version_update  --skip_binary_upload --automatic_release --submit_for_review
 
-# Delete Cookie
+# セッションクッキーの削除 / Delete Session Cookie
 rm ~/.fastlane/spaceship/**/cookie
 ```
 
-## Create Gif
+## ffmpeg
 ```bash
+# インストール / Install
+brew install ffmpeg
+
+# Gifの生成 / Create Gif
 ffmpeg -i sample_01.mov -vf scale=400:-1 -r 20 sample_01.gif
 ```
 
 ## Swift Compiler
 ```bash
-# Parse and type-check input file(s) and pretty print AST(s)
+# ASTの整形出力 / Parse and type-check input file(s) and pretty print AST(s)
 swiftc -print-ast file
-# Parse and type-check input file(s) and dump AST(s)
+# ASTのダンプ / Parse and type-check input file(s) and dump AST(s)
 swiftc -dump-ast file
 ```
 
 ## SwiftLint
 
 ```bash
-# Install
+# インストール / Install
 brew install swiftlint
 
 # Lint
 swiftlint
 
-# AutoCorrect
+# 自動修正 / AutoCorrect
 swiftlint autocorrect
 
-# Print Docs
+# ドキュメントの出力 / Print Docs
 swiftlint generate-docs
 
-# Copy All Opt-In Rules
+# オプトインルールの全コピー / Copy All Opt-In Rules
 swiftlint rules | awk -F "|" '$3 ~ "yes" { print $2 }' | tr -d ' ' | sed 's/^/  - /' | pbcopy
 
-# Delete Caches
+# キャッシュの削除 / Delete Caches
 rm -rf ~/Library/Caches/SwiftLint
 ```
 
 ## Xcode
 
 ```bash
-# check number of cores, and set number to build
+# コア数を確認してコンパイルに利用するコア数を設定 / check number of cores, and set number to build
 system_profiler SPHardwareDataType | grep "Cores"
 defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks [number_of_core]
 
-# show build time
+# ビルド時間を出力 / show build time
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
 
-# print targets, configurations, schemes
+# targets, configurations, schemes一覧を出力 / print targets, configurations, schemes
 xcodebuild -list
 
-# print sdks
+# SDK一覧を出力 / print sdks
 xcodebuild -showsdks
 
-## Clean
+## クリーン / Clean
 xcodebuild -alltargets clean
 rm -rf ~/Library/Developer/Xcode/DerivedData/
 rm -rf ~/Library/Caches/com.apple.dt.Xcode/
@@ -181,10 +184,10 @@ xcrun simctl erase all
 ## HomeBrew
 
 ```bash
-# install
+# インストール / Install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Delete Caches
+# キャッシュの削除 / Delete Caches
 rm -rf ~/Library/Caches/Homebrew
 brew cleanup -s
 rm -rf $(brew --cache)
@@ -193,17 +196,17 @@ rm -rf $(brew --cache)
 ## Git
 
 ```bash
-# Create .gitignore
+# .gitignoreの生成 / Create .gitignore
 brew install gibo
 gibo dump Swift Xcode >> .gitignore
 
-# Quick Push .gitignore
+# .gitignoreのクイックプッシュ / Quick Push .gitignore
 git add .gitignore;git commit -m "add .gitignore"
 
-# Quick Push Igonored Files
+# git管理されないファイルの削除プッシュ /  Quick Push Igonored Files
 git rm -r --cached .;git add .;git commit -m "rm ignore files"
 
-# Quick Push Fix
+# fixをクイックプッシュ / Quick Push Fix
 git add .;git commit -m "fix";git push
 ```
 
