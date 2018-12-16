@@ -17,6 +17,12 @@ Command CheetSheet for iOS Developer
 ## Certificates / Provisioning Profiles
 
 ```bash
+# 秘密鍵を作成 / Create Private Key
+openssl genrsa -out private.key 2048
+
+# CSRを作成 / Create CSR
+openssl req -new -key private.key -out CertificateSigningRequest.certSigningRequest -subj "/emailAddress=[メールアドレス], CN=[コモンネーム], C=JP"
+
 # キーチェーンの証明書一覧を表示 / Print certificates in keychain
 security find-identity -p codesigning -v
 
