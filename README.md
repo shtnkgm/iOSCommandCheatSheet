@@ -54,7 +54,6 @@ fastlane deliver download_screenshots --force
 
 # Create Screenshot
 fastlane frameit(path: './fastlane/screenshots/', white: false)
-fastlane setframe
 
 # Upload Screenshot
 fastlane deliver --force --skip_binary_upload --skip_metadata --skip_app_version_update --overwrite_screenshots
