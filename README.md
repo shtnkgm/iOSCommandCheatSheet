@@ -25,6 +25,9 @@ pod trunk register mail_address 'your_name'
 
 # Publish Pods
 pod trunk push pod_name.podspec
+
+# Delete Caches
+pod cache clean --all
 ```
 
 ## Carthage
@@ -38,6 +41,10 @@ ls Carthage/Build/iOS | grep -E .+framework$ | sed 's/.*/$(SRCROOT)\/Carthage\/B
 
 # Build for Check Library
 carthage build --no-skip-current 
+
+# Delete Caches
+rm -rf ~/Library/Caches/org.carthage.CarthageKit 
+rm -rf ~/Library/Caches/carthage
 ```
 
 ## Fastlane
@@ -67,6 +74,9 @@ fastlane deliver --force --skip_screenshots --skip_metadata --skip_app_version_u
 
 # Submit for Review
 fastlane deliver --force --skip_screenshots --skip_metadata --skip_app_version_update  --skip_binary_upload --automatic_release --submit_for_review
+
+# Delete Cookie
+rm ~/.fastlane/spaceship/**/cookie
 ```
 
 ## Create Gif
@@ -91,11 +101,16 @@ swiftlint generate-docs
 
 # Copy All Opt-In Rules
 swiftlint rules | awk -F "|" '$3 ~ "yes" { print $2 }' | tr -d ' ' | sed 's/^/  - /' | pbcopy
+
+# Delete Caches
+rm -rf ~/Library/Caches/SwiftLint
+```
+
+## Xcode
+
 ```
 
 ## Clean
-
-```
 rm -rf ~/Library/Caches/com.apple.dt.Xcode/
 xcodebuild clean
 xcodebuild -alltargets clean
@@ -105,14 +120,15 @@ xcrun simctl erase all
 rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport/*/Symbols/System/Library/Caches
 rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache"
 rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang.$(whoami)/ModuleCache"
+```
+
+## HomeBrew
+
+```bash
+# Delete Caches
 rm -rf ~/Library/Caches/Homebrew
 brew cleanup -s
 rm -rf $(brew --cache)
-rm -rf ~/Library/Caches/SwiftLint
-pod cache clean --all
-rm -rf ~/Library/Caches/org.carthage.CarthageKit 
-rm -rf ~/Library/Caches/carthage
-rm ~/.fastlane/spaceship/**/cookie
 ```
 
 ## Git
