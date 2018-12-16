@@ -116,6 +116,11 @@ rm -rf ~/Library/Caches/SwiftLint
 ## Xcode
 
 ```
+# print targets, configurations, schemes
+xcodebuild -list
+
+# print sdks
+xcodebuild -showsdks
 
 ## Clean
 rm -rf ~/Library/Caches/com.apple.dt.Xcode/
