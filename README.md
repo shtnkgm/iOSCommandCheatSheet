@@ -116,6 +116,9 @@ rm -rf ~/Library/Caches/SwiftLint
 ## Xcode
 
 ```
+# show build time
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+
 # print targets, configurations, schemes
 xcodebuild -list
 
