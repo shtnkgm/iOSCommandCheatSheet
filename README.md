@@ -206,10 +206,10 @@ rm -rf $(brew --cache)
 brew install gibo
 gibo dump Swift Xcode >> .gitignore
 
-# .gitignoreのクイックプッシュ / Quick Push .gitignore
+# .gitignoreのクイックコミット / Quick Commit .gitignore
 git add .gitignore;git commit -m "add .gitignore"
 
-# git管理されないファイルの削除プッシュ /  Quick Push Igonored Files
+# git管理されないファイルの削除コミット /  Quick Commit Igonored Files
 git rm -r --cached .;git add .;git commit -m "rm ignore files"
 ```
 
