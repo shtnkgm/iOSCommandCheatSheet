@@ -176,6 +176,11 @@ xcodebuild -list
 # SDK一覧を出力 / print sdks
 xcodebuild -showsdks
 
+## ディスク容量削減
+rm -rf ~/Library/Developer/Xcode/Archives
+rm -rf ~/Library/Developer/Xcode/iOS DeviceSupport/
+rm -rf ~/Library/Application Support/iPhone Simulator
+
 ## クリーン / Clean
 xcodebuild -alltargets clean
 rm -rf ~/Library/Developer/Xcode/DerivedData/
