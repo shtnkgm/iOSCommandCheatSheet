@@ -163,6 +163,9 @@ rm -rf ~/Library/Caches/SwiftLint
 ## Xcode
 
 ```bash
+# Developerディレクトリの指定
+sudo xcode-select --switch /Applications/Xcode.app
+
 # コア数を確認してコンパイルに利用するコア数を設定 / check number of cores, and set number to build
 system_profiler SPHardwareDataType | grep "Cores"
 defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks [number_of_core]
