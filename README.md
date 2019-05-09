@@ -62,6 +62,7 @@ pod trunk push pod_name.podspec
 
 # キャッシュの削除 / Delete Caches
 pod cache clean --all
+rm -rf ~/Library/Caches/CocoaPods/
 ```
 
 ## Carthage
