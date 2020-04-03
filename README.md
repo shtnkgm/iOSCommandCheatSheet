@@ -8,7 +8,6 @@ Command CheetSheet for iOS Developer
  - CocoaPods
  - Carthage
  - Fastlane
- - ffmpeg
  - Swift Compiler
  - SwiftLint
  - Xcode
