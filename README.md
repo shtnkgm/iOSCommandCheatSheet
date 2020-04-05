@@ -212,6 +212,7 @@ git add .gitignore;git commit -m "add .gitignore"
 
 # Quick Commit Igonored Files
 git rm -r --cached .;git add .;git commit -m "rm ignore files"
+```
 
 ## Firebase
 
