@@ -13,6 +13,7 @@ Command CheetSheet for iOS Developer
  - Xcode
  - Homebrew
  - .gitignore
+ - Firebase
 
 ## Certificates / Provisioning Profiles
 
@@ -211,5 +212,11 @@ git add .gitignore;git commit -m "add .gitignore"
 
 # Quick Commit Igonored Files
 git rm -r --cached .;git add .;git commit -m "rm ignore files"
+
+## Firebase
+
+```bash
+# Upload dSYM
+./Pods/FirebaseCrashlytics/upload-symbols -gsp GoogleService-Info.plist -p ios ~/Downloads/appDsyms.zip
 ```
 
