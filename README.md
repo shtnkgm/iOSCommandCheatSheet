@@ -99,10 +99,10 @@ brew cask install fastlane
 fastlane init
 
 # Download Metadata
-fastlane deliver download_metadata　 --force
+fastlane deliver download_metadata --force
 
 # Upload Metadata
-fastlane deliver --force --skip_screenshots --skip_binary_upload --skip_app_version_update
+fastlane deliver --force --skip_screenshots --skip_binary_upload --skip_app_version_update --skip_metadata false
 
 # Download Screenshot
 fastlane deliver download_screenshots --force
@@ -111,7 +111,7 @@ fastlane deliver download_screenshots --force
 fastlane frameit(path: './fastlane/screenshots/', white: false)
 
 # Upload Screenshot
-fastlane deliver --force --skip_binary_upload --skip_metadata --skip_app_version_update --overwrite_screenshots
+fastlane deliver --force --skip_binary_upload --skip_metadata --skip_app_version_update --overwrite_screenshots --skip_screenshots false
 
 # Upload Binary
 fastlane deliver --force --skip_screenshots --skip_metadata --skip_app_version_update
