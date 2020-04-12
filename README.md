@@ -79,7 +79,7 @@ carthage bootstrap --platform iOS --cache-builds
 carthage update --platform iOS --cache-builds
 
 # Create XCFileList
-ls Carthage/Build/iOS | grep -E .+framework$ | sed 's/.*/$(SRCROOT)\/Carthage\/Build\/iOS\/&/' > CarthageInput.xcfilelist
+ls Carthage/Build/iOS | grep -E .+framework$ | sed 's/.*/$(SRCROOT)\/Carthage\/Build\/iOS\/&/' > Carthage.xcfilelist
 
 # Build
 carthage build --no-skip-current 
