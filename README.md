@@ -219,6 +219,9 @@ git rm -r --cached .;git add .;git commit -m "rm ignore files"
 ```bash
 # Upload dSYM
 ./Pods/FirebaseCrashlytics/upload-symbols -gsp GoogleService-Info.plist -p ios ~/Downloads/appDsyms.zip
+
 Scripts/upload-symbols -gsp GoogleService-Info.plist -p ios ~/Downloads/appDsyms*.zip
+
+./Frameworks/Firebase/FirebaseCrashlytics/upload-symbols -gsp GoogleService-Info.plist -p ios ~/Downloads/appDsyms*.zip
 ```
 
