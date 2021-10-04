@@ -11,6 +11,7 @@ Command CheetSheet for iOS Developer
  - Swift Compiler
  - SwiftLint
  - Xcode
+ - Simulator
  - Homebrew
  - .gitignore
  - Firebase
@@ -186,6 +187,14 @@ rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache"
 rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang.$(whoami)/ModuleCache"
 xcrun --kill-cache
 xcrun simctl erase all
+```
+
+## Simulator
+
+```bash
+xcrun simctl list
+xcrun simctl openurl <UUID> <URL scheme>
+xcrun simctl openurl booted <URL scheme>
 ```
 
 ## Homebrew
