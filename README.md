@@ -193,6 +193,7 @@ xcrun simctl erase all
 
 ```bash
 xcrun simctl list
+xcrun simctl list devicetypes
 xcrun simctl openurl <UUID> <URL scheme>
 xcrun simctl openurl booted <URL scheme>
 ```
