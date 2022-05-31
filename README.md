@@ -195,8 +195,22 @@ rm -rf "$TMPDIR/../C/clang/ModuleCache"
 ```bash
 xcrun simctl list
 xcrun simctl list devicetypes
+xcrun simctl list | grep Booted
 xcrun simctl openurl <UUID> <URL scheme>
 xcrun simctl openurl booted <URL scheme>
+xcrun simctl privacy booted grant photos <Bundle ID>
+xcrun simctl privacy booted revoke photos <Bundle ID>
+xcrun simctl privacy reset all
+xcrun simctl push booted payload.json
+xcrun simctl status_bar booted override --time 12:01 --cellularBars 1 --dataNetwork 3g --wifiMode failed
+xcrun simctl status_bar booted clear
+xcrun simctl keychain booted add-root-cert myCA.pem
+xcrun simctl io booted recordVideo video.mp4
+xcrun simctl io booted recordVideo --codec h264 --mask ignored video.mp4
+xcrun simctl io booted recordVideo --display external video.mp4
+xcrun simctl pbpaste booted
+xcrun simctl pbsync host booted
+xcrun simctl pbinfo booted
 ```
 
 ## Homebrew
