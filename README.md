@@ -211,6 +211,7 @@ xcrun simctl io booted recordVideo --display external video.mp4
 xcrun simctl pbpaste booted
 xcrun simctl pbsync host booted
 xcrun simctl pbinfo booted
+xcrun simctl push booted <Bundle ID> payload.apns
 ```
 
 ## Homebrew
