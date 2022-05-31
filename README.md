@@ -200,7 +200,7 @@ xcrun simctl openurl <UUID> <URL scheme>
 xcrun simctl openurl booted <URL scheme>
 xcrun simctl privacy booted grant photos <Bundle ID>
 xcrun simctl privacy booted revoke photos <Bundle ID>
-xcrun simctl privacy reset all
+xcrun simctl privacy booted reset all <Bundle ID>
 xcrun simctl push booted payload.json
 xcrun simctl status_bar booted override --time 12:01 --cellularBars 1 --dataNetwork 3g --wifiMode failed
 xcrun simctl status_bar booted clear
