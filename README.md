@@ -212,6 +212,7 @@ xcrun simctl pbpaste booted
 xcrun simctl pbsync host booted
 xcrun simctl pbinfo booted
 xcrun simctl push booted <Bundle ID> payload.apns
+xcrun simctl --set previews delete all
 ```
 
 ## Homebrew
