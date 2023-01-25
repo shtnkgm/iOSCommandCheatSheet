@@ -188,6 +188,7 @@ rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang.$(whoami)/ModuleCache"
 xcrun --kill-cache
 xcrun simctl erase all
 rm -rf "$TMPDIR/../C/clang/ModuleCache"
+killall XCBBuildService
 ```
 
 ## Simulator
