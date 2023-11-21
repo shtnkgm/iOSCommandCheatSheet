@@ -157,63 +157,123 @@ rm -rf ~/Library/Caches/SwiftLint
 ## Xcode
 
 ```bash
-# Select developer path
+
+# Switch the developer path to the specified Xcode application
 sudo xcode-select --switch /Applications/Xcode.app
 
-# check number of cores, and set number to build
+# Check the number of cores on the system and set the number to use for building
 system_profiler SPHardwareDataType | grep "Cores"
-defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks [number_of_core]
+defaults write com.apple.dt.Xcode IDEBuildOperationMaxNumberOfConcurrentCompileTasks [number_of_cores]
 
-# show build time
+# Enable Xcode to show the build duration
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
 
-# print targets, configurations, schemes
+# Print out the targets, configurations, and schemes in the current project
 xcodebuild -list
 
-# print sdks
+# Print out the available SDKs that Xcode can build against
 xcodebuild -showsdks
 
-## Clean for disk
+# Clean the disk by removing old build archives to save space
 rm -rf ~/Library/Developer/Xcode/Archives
+
+# Remove iOS Device Support data to save disk space
 rm -rf ~/Library/Developer/Xcode/iOS DeviceSupport/
+
+# Remove old iPhone Simulator data
 rm -rf ~/Library/Application Support/iPhone Simulator
 
-## Delete cache
+# Clean build by deleting the build cache
 xcodebuild -alltargets clean
+
+# Remove Xcode's derived data to clear any cached build settings or intermediates
 rm -rf ~/Library/Developer/Xcode/DerivedData/
+
+# Clear Xcode's cache to ensure a clean build environment
 rm -rf ~/Library/Caches/com.apple.dt.Xcode/
+
+# Remove cache files related to iOS Device Support
 rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport/*/Symbols/System/Library/Caches
+
+# Delete Xcode's cache files
+xcrun --kill-cache
+
+# Terminate the Xcode build service to stop any ongoing build processes
+killall XCBBuildService
+
+# Remove Clang module cache to prevent potential conflicts or outdated modules
 rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache"
 rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang.$(whoami)/ModuleCache"
-xcrun --kill-cache
-xcrun simctl erase all
+
+# Remove temporary Clang module cache
 rm -rf "$TMPDIR/../C/clang/ModuleCache"
-killall XCBBuildService
 ```
 
 ## Simulator
 
 ```bash
+# List all available devices, device types, runtimes, and device pairs
 xcrun simctl list
+
+# List all available device types that can be created
 xcrun simctl list devicetypes
+
+# List only the devices that are currently booted
 xcrun simctl list | grep Booted
+
+# Open a URL in a device with the specified UUID
 xcrun simctl openurl <UUID> <URL scheme>
+
+# Open a URL in the currently booted device
 xcrun simctl openurl booted <URL scheme>
+
+# Grant the Photos app permission for the booted device using the specified bundle ID
 xcrun simctl privacy booted grant photos <Bundle ID>
+
+# Revoke the Photos app permission for the booted device using the specified bundle ID
 xcrun simctl privacy booted revoke photos <Bundle ID>
+
+# Reset the privacy permissions for all apps on the booted device using the specified bundle ID
 xcrun simctl privacy booted reset all <Bundle ID>
+
+# Send a simulated push notification to the booted device from the specified payload file
 xcrun simctl push booted payload.json
+
+# Override the status bar display for the booted device to a specific time, cellular bars, network type, and Wi-Fi mode
 xcrun simctl status_bar booted override --time 12:01 --cellularBars 1 --dataNetwork 3g --wifiMode failed
+
+# Clear any status bar overrides and revert to the device's default status bar settings
 xcrun simctl status_bar booted clear
+
+# Add a root certificate to the booted device's keychain from the specified file
 xcrun simctl keychain booted add-root-cert myCA.pem
+
+# Record a video of the booted device's screen and save it to a file
 xcrun simctl io booted recordVideo video.mp4
+
+# Record a video of the booted device's screen with the specified codec and ignore the mask
 xcrun simctl io booted recordVideo --codec h264 --mask ignored video.mp4
+
+# Record a video of an externally displayed screen of the booted device
 xcrun simctl io booted recordVideo --display external video.mp4
+
+# Paste the contents of the device's clipboard to the host machine
 xcrun simctl pbpaste booted
+
+# Synchronize the clipboard content from the host to the booted device
 xcrun simctl pbsync host booted
+
+# Get information about the booted device's clipboard
 xcrun simctl pbinfo booted
+
+# Send a simulated APNS push notification to the booted device using the specified bundle ID and payload
 xcrun simctl push booted <Bundle ID> payload.apns
+
+# Delete all simulators that are set to show in the device previews
 xcrun simctl --set previews delete all
+
+# Erase all content and settings from all simulators
+xcrun simctl erase all
 ```
 
 ## Homebrew
