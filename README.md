@@ -7,6 +7,7 @@ Command CheetSheet for iOS Developer
  - Certificates / Provisioning Profiles
  - CocoaPods
  - Carthage
+ - Swift Package Manager
  - Fastlane
  - Swift Compiler
  - SwiftLint
@@ -88,6 +89,13 @@ carthage build --no-skip-current
 # Delete Caches
 rm -rf ~/Library/Caches/org.carthage.CarthageKit 
 rm -rf ~/Library/Caches/carthage
+```
+
+## Swift Package Manager
+
+```bash
+# Delete Caches
+em -rf ~/Library/Caches/org.swift.swiftpm
 ```
 
 ## Fastlane
