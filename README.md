@@ -95,7 +95,7 @@ rm -rf ~/Library/Caches/carthage
 
 ```bash
 # Delete Caches
-em -rf ~/Library/Caches/org.swift.swiftpm
+rm -rf ~/Library/Caches/org.swift.swiftpm
 ```
 
 ## Fastlane
