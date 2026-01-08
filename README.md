@@ -29,8 +29,10 @@ openssl req -new -key private.key -out CertificateSigningRequest.certSigningRequ
 # Print certificates in keychain
 security find-identity -p codesigning -v
 
-# Print provisioning profiles
+# Print provisioning profiles（〜Xcode 14）
 ls ~/Library/MobileDevice/Provisioning\ Profiles/
+# Print provisioning profiles（Xcode 15〜）
+ls ~/Library/Developer/Xcode/UserData/Provisioning\ Profiles/
 ```
 
 ## CocoaPods
