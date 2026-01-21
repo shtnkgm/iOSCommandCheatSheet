@@ -316,6 +316,10 @@ git rm -r --cached .;git add .;git commit -m "rm ignore files"
 ## Firebase
 
 ```bash
+# Find dSYM UUID
+find ./ -name "*.dSYM" -maxdepth 2 -type d -print0 \
+| xargs -0 -I{} dwarfdump --uuid "{}"
+
 # Upload dSYM
 ./Pods/FirebaseCrashlytics/upload-symbols -gsp GoogleService-Info.plist -p ios ~/Downloads/appDsyms.zip
 
