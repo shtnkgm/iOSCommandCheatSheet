@@ -297,6 +297,11 @@ Remove old iPhone Simulator data
 rm -rf ~/Library/Application Support/iPhone Simulator
 ```
 
+Remove CoreSimulator caches
+```bash
+rm -rf ~/Library/Developer/CoreSimulator/Caches
+```
+
 Clean build by deleting the build cache
 ```bash
 xcodebuild -alltargets clean
@@ -305,6 +310,11 @@ xcodebuild -alltargets clean
 Remove Xcode's derived data to clear any cached build settings or intermediates
 ```bash
 rm -rf ~/Library/Developer/Xcode/DerivedData/
+```
+
+Remove Xcode Previews data
+```bash
+rm -rf ~/Library/Developer/Xcode/UserData/Previews
 ```
 
 Clear Xcode's cache to ensure a clean build environment
