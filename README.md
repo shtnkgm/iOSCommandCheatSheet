@@ -46,7 +46,7 @@ ls ~/Library/Developer/Xcode/UserData/Provisioning\ Profiles/
 
 ## CocoaPods
 
-Install 
+Install
 ```bash
 sudo gem install cocoapods
 ```
@@ -56,12 +56,12 @@ Delete Pods
 rm -rf Pods
 ```
 
-Delete Pods
+Delete Podfile
 ```bash
 rm Podfile
 ```
 
-Delete Pods
+Delete Podfile.lock
 ```bash
 rm Podfile.lock
 ```
@@ -159,7 +159,7 @@ rm -rf ~/Library/Caches/org.swift.swiftpm
 
 Install
 ```bash
-brew cask install fastlane
+brew install fastlane
 ```
 
 Init fastlane
@@ -184,7 +184,7 @@ fastlane deliver download_screenshots --force
 
 Create Screenshot
 ```bash
-fastlane frameit(path: './fastlane/screenshots/', white: false)
+fastlane run frameit path:"./fastlane/screenshots/" white:false
 ```
 
 Upload Screenshot
@@ -463,7 +463,7 @@ xcrun simctl erase all
 
 Install
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Delete Caches
@@ -503,17 +503,17 @@ Quick Commit .gitignore
 git commit -m "add .gitignore"
 ```
 
-Quick Commit Igonored Files
+Quick Commit Ignored Files
 ```bash
 git rm -r --cached .
 ```
 
-Quick Commit Igonored Files
+Quick Commit Ignored Files
 ```bash
 git add .
 ```
 
-Quick Commit Igonored Files
+Quick Commit Ignored Files
 ```bash
 git commit -m "rm ignore files"
 ```
