@@ -2,7 +2,7 @@
 
 This is a console command cheat sheet for iOS developers.
 
-Command CheetSheet for iOS Developer
+Command CheatSheet for iOS Developer
 
  - Certificates / Provisioning Profiles
  - CocoaPods
@@ -292,9 +292,9 @@ Remove iOS Device Support data to save disk space
 rm -rf ~/Library/Developer/Xcode/iOS DeviceSupport/
 ```
 
-Remove old iPhone Simulator data
+Remove old simulator data
 ```bash
-rm -rf ~/Library/Application Support/iPhone Simulator
+rm -rf ~/Library/Developer/CoreSimulator/Devices
 ```
 
 Remove CoreSimulator caches
