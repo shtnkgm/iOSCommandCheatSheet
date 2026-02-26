@@ -468,17 +468,7 @@ Install
 
 Delete Caches
 ```bash
-rm -rf ~/Library/Caches/Homebrew
-```
-
-Delete Caches
-```bash
-brew cleanup -s
-```
-
-Delete Caches
-```bash
-rm -rf $(brew --cache)
+rm -rf ~/Library/Caches/Homebrew && brew cleanup -s && rm -rf "$(brew --cache)"
 ```
 
 ## .gitignore
@@ -495,27 +485,12 @@ gibo dump Swift Xcode >> .gitignore
 
 Quick Commit .gitignore
 ```bash
-git add .gitignore
-```
-
-Quick Commit .gitignore
-```bash
-git commit -m "add .gitignore"
+git add .gitignore && git commit -m "add .gitignore"
 ```
 
 Quick Commit Ignored Files
 ```bash
-git rm -r --cached .
-```
-
-Quick Commit Ignored Files
-```bash
-git add .
-```
-
-Quick Commit Ignored Files
-```bash
-git commit -m "rm ignore files"
+git rm -r --cached . && git add . && git commit -m "rm ignore files"
 ```
 
 ## Firebase
