@@ -4,18 +4,18 @@ This is a console command cheat sheet for iOS developers.
 
 Command CheatSheet for iOS Developer
 
- - Certificates / Provisioning Profiles
- - CocoaPods
- - Carthage
- - Swift Package Manager
- - Fastlane
- - Swift Compiler
- - SwiftLint
- - Xcode
- - Simulator
- - Homebrew
- - .gitignore
- - Firebase
+- [Certificates / Provisioning Profiles](#certificates--provisioning-profiles)
+- [CocoaPods](#cocoapods)
+- [Carthage](#carthage)
+- [Swift Package Manager](#swift-package-manager)
+- [Fastlane](#fastlane)
+- [Swift Compiler](#swift-compiler)
+- [SwiftLint](#swiftlint)
+- [Xcode](#xcode)
+- [Simulator](#simulator)
+- [Homebrew](#homebrew)
+- [.gitignore](#gitignore)
+- [Firebase](#firebase)
 
 ## Certificates / Provisioning Profiles
 
