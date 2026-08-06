@@ -2,8 +2,6 @@
 
 This is a console command cheat sheet for iOS developers.
 
-Command CheatSheet for iOS Developer
-
 - [Certificates / Provisioning Profiles](#certificates--provisioning-profiles)
 - [CocoaPods](#cocoapods)
 - [Carthage](#carthage)
@@ -26,7 +24,7 @@ openssl genrsa -out private.key 2048
 
 Create CSR
 ```bash
-openssl req -new -key private.key -out CertificateSigningRequest.certSigningRequest -subj "/emailAddress=[YourMailAddress], CN=[CommonName], C=JP"
+openssl req -new -key private.key -out CertificateSigningRequest.certSigningRequest -subj "/emailAddress=[YourMailAddress]/CN=[CommonName]/C=JP"
 ```
 
 Print certificates in keychain
@@ -46,9 +44,11 @@ ls ~/Library/Developer/Xcode/UserData/Provisioning\ Profiles/
 
 ## CocoaPods
 
+> Note: CocoaPods is now in maintenance mode. Consider migrating to Swift Package Manager.
+
 Install
 ```bash
-sudo gem install cocoapods
+brew install cocoapods
 ```
 
 Delete Pods
@@ -120,17 +120,17 @@ brew install Carthage
 
 Install Libraries
 ```bash
-carthage bootstrap --platform iOS --cache-builds
+carthage bootstrap --platform iOS --cache-builds --use-xcframeworks
 ```
 
 Update Libraries
 ```bash
-carthage update --platform iOS --cache-builds
+carthage update --platform iOS --cache-builds --use-xcframeworks
 ```
 
-Create XCFileList
+Create XCFileList (for legacy framework builds without `--use-xcframeworks`)
 ```bash
-ls Carthage/Build/iOS | grep -E .+framework$ | sed 's/.*/$(SRCROOT)\/Carthage\/Build\/iOS\/&/' > Carthage.xcfilelist
+ls Carthage/Build/iOS | grep -E '.+framework$' | sed 's/.*/$(SRCROOT)\/Carthage\/Build\/iOS\/&/' > Carthage.xcfilelist
 ```
 
 Build
@@ -232,7 +232,7 @@ swiftlint
 
 AutoCorrect
 ```bash
-swiftlint autocorrect
+swiftlint --fix
 ```
 
 Print Docs
@@ -289,12 +289,12 @@ rm -rf ~/Library/Developer/Xcode/Archives
 
 Remove iOS Device Support data to save disk space
 ```bash
-rm -rf ~/Library/Developer/Xcode/iOS DeviceSupport/
+rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport/
 ```
 
-Remove old simulator data
+Delete simulators that are no longer available (safer than removing the Devices directory directly)
 ```bash
-rm -rf ~/Library/Developer/CoreSimulator/Devices
+xcrun simctl delete unavailable
 ```
 
 Remove CoreSimulator caches
@@ -394,7 +394,12 @@ Reset the privacy permissions for all apps on the booted device using the specif
 xcrun simctl privacy booted reset all <Bundle ID>
 ```
 
-Send a simulated push notification to the booted device from the specified payload file
+Send a simulated push notification to the booted device using the specified bundle ID and payload
+```bash
+xcrun simctl push booted <Bundle ID> payload.apns
+```
+
+Send a simulated push notification to the booted device from the specified payload file (the JSON must contain a `Simulator Target Bundle` key)
 ```bash
 xcrun simctl push booted payload.json
 ```
@@ -442,11 +447,6 @@ xcrun simctl pbsync host booted
 Get information about the booted device's clipboard
 ```bash
 xcrun simctl pbinfo booted
-```
-
-Send a simulated APNS push notification to the booted device using the specified bundle ID and payload
-```bash
-xcrun simctl push booted <Bundle ID> payload.apns
 ```
 
 Delete all simulators that are set to show in the device previews
